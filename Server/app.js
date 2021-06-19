@@ -16,6 +16,8 @@ require('./models')
 //  })
 
  app.post('/add',UserCtrl.addUser);
+ app.put('/update',UserCtrl.updateUser);
+ app.delete('/delete',UserCtrl.deleteUser);
 
  
 

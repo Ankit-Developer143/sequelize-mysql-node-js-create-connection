@@ -4,9 +4,6 @@ module.exports = (sequelize,DataTypes) =>{
         email:{
            type: DataTypes.STRING,
            defaultValue:'test3gmail.com'
-        },
-        gender:{
-            type:DataTypes.STRING
         }
         
     })
