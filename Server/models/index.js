@@ -15,9 +15,14 @@ sequelize.authenticate()
 const db = {}
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
-db.users=require('./users')(sequelize,DataTypes)
 
-db.sequelize.sync()
+//Used to Send the data you does not need to every time import Data
+db.Users=require('./users')(sequelize,DataTypes)
+
+//sync as well as Create Table and also drop table if already exists
+db.sequelize.sync({force:false})
 .then(() =>{
     console.log("yes Re-Sync");
 })
+
+module.exports = db;

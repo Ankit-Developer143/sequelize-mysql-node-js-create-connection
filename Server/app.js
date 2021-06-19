@@ -1,15 +1,27 @@
 const express = require('express')
-const app = express()
-const port = 3000
+const app = express();
+const router  = express.Router();
 
-require('./models/connection')
+const port = 3000;
+
+//import Connection
+require('./models')
+
+//import controller
+ const UserCtrl =require('./Controller/userController');
+
+
+//  app.use('/',(req,res,next) =>{
+//    res.send("Hello")
+//  })
+
+ app.post('/add',UserCtrl.addUser);
+
+ 
 
 
 
 
 
 
-
-app.listen(port =>{
-  console.log("Express Running " ,`http://localhost:${3000}`);
-})
+app.listen(port);
